@@ -29,7 +29,7 @@ func main() {
 
 	logger := logger.Logger{}
 	logFile, err := os.OpenFile("logs.txt", os.O_WRONLY | os.O_CREATE, 0666)
-	if err != nil { fmt.Println("huy"); return }
+	if err != nil { fmt.Println("cant open log file"); return }
 	defer logFile.Close()
 	logChan := make(chan []byte)
 	logger.Init(logFile, logChan)
